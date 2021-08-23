@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {Col, Row, Radio, Input, Checkbox, Button, Modal, Typography, Space, Alert } from 'antd/lib';
+import {Col, Row, Radio, Input, Checkbox, Button, Modal, Typography, Space } from 'antd/lib';
 import FormField from './FormField';
 import Politic from './Politic';
 import AntdInputTag from 'antd-input-tag';
@@ -77,7 +77,7 @@ const Fields = (props) => {
                 <Input 
                   placeholder="Электронная почта" 
                   size="large"
-                  {...formik.getFieldProps('email')} 
+                  {...formik.getFieldProps('email')}  
                   style={formik.touched.email && formik.errors.email && {borderColor: "#ff2e56", color: "#ff2e56", boxShadow: "0 0 0 2px #ff2e5611"} }
                 />
                 {formik.touched.email && formik.errors.email && suffix}
@@ -145,7 +145,7 @@ const Fields = (props) => {
                 onClick={()=>{formik.setFieldValue('police',!formik.values.police)}}
               >* Я согласен с
               </Checkbox>
-              <a onClick={showModal} style={{marginLeft: -2}}>политикой конфединциальности</a>
+              <a onClick={showModal} style={{marginLeft: -2, color: "#40a9ff"}}>политикой конфединциальности</a>
               {formik.touched.police && formik.errors.police ? (
                 <div className="alert">{formik.errors.police}</div>
               ) : null}

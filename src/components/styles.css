@@ -85,3 +85,8 @@
 .modal-submit .ant-modal-close {
   display: none;
 }
+
+.ant-input:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px #40a9ff11;
+}
