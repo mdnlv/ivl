@@ -2,6 +2,7 @@
   "name": "ivl",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mdnlv.github.io/ivl",
   "dependencies": {
     "@ant-design/icons": "^4.6.3",
     "@testing-library/jest-dom": "^5.14.1",
@@ -10,6 +11,7 @@
     "antd": "^4.16.12",
     "antd-input-tag": "^1.0.14",
     "formik": "^2.2.9",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -17,6 +19,8 @@
     "yup": "^0.32.9"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
