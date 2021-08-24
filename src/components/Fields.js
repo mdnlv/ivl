@@ -1,22 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {Col, Row, Radio, Input, Checkbox, Button, Modal, Typography, Space } from 'antd/lib';
 import FormField from './FormField';
 import Politic from './Politic';
-import AntdInputTag from 'antd-input-tag';
+import InputTag from './InputTag';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import './styles.css';
 
 const Fields = (props) => {
-  const [data, setData] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const { Title } = Typography;
   const formik = props.formik;
-  const childRef = useRef();
-
-  const updateChildState = () => {
-    setData(childRef.current.changeVal());
-  };
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -100,7 +94,7 @@ const Fields = (props) => {
 
             <Col xs={24} xl={12}>
               <FormField label={'Укажите ваши навыки'} name={'skils'}>
-                <AntdInputTag value={data} ref={childRef} />
+                <InputTag isSubmit={props.isSubmit} />
               </FormField>
             </Col>
           </Row>
@@ -160,7 +154,9 @@ const Fields = (props) => {
             shape="round"
             size="large"
             className={'save-btn'}
-            onClick={formik.handleSubmit}
+            onClick={()=>{
+              formik.handleSubmit();
+            }}
           >
             Отправить
           </Button> 
@@ -178,6 +174,7 @@ const Fields = (props) => {
             type="primary" 
             shape="round"
             onClick={() => {
+              
               formik.setFieldValue('police',true);
               setIsModalVisible(false);
             }}

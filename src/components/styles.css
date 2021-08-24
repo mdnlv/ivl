@@ -7,8 +7,33 @@
 }
 
 .wrap {
+  overflow: hidden;
+  border: 1px solid #d3d2d3;
+  cursor: text;
+  background: #fff;
+  transition: all .3s;
   padding: 5px 4px 0;
   border-radius: 5px;
+}
+.inputClass {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none!important;
+}
+.ulClass{
+  float: left;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.wrap:hover {
+  border: 1px solid #8e8e8e;
+}
+.ant-tag {
+  padding: 4px 7px;
+  border: none;
+  background: '#f3f3f3';
 }
 
 .wrap .ant-tag {
@@ -86,12 +111,12 @@
   display: none;
 }
 
-.form-field .ant-input:focus, .form-field .ant-input:hover {
+.form-field .ant-input:focus {
   border-color: #899dfb;
   box-shadow: 0 0 0 2px #899dfb11;
 }
 
-.form-field .ant-input:focus, .form-field .ant-input:hover {
+.form-field .ant-input:hover {
   border-color: #899dfb;
   box-shadow: 0 0 0 2px #899dfb11;
 }
